@@ -5,6 +5,8 @@
 	2. No valida que el valor de tipo al crearse el objeto sea CAJA_AHORRO o CUENTA_CORRIENTE. Como consecuencia, no se ejecuta la validación de saldo suficiente por lo que la cuenta puede quedar con saldo negativo.
 - Agregaría un getter para el atributo saldo y opcionalmente para el atributo titular y nroCuenta.
 
+![Diagrama de clases](images/CuentaBancaria.png)
+
 ## Ejercicio 1.b
 Suposiciones
 
