@@ -15,7 +15,7 @@ Suposiciones
 El patrón Strategy se utiliza cuando es necesario modificar un algoritmo en tiempo de ejecución. Se define una familia de algoritmos que son encapsuladas en distintas clases.  El cliente puede cambiar las estrategias.
 Las instancias necesarias de cada clase de estrategia dependen del problema. Una estrategia puede tener estado
 
-###Pruebas unitarias automatizadas
+### Pruebas unitarias automatizadas
 Podemos mencionar como principales ventajas de las pruebas unitarias las siguientes:
 1. Los errores son más fáciles de localizar.
 2. Los problemas son encontrados al principio del desarrollo.
@@ -23,7 +23,7 @@ Podemos mencionar como principales ventajas de las pruebas unitarias las siguien
 4. Dan facilidad para encarar refactors u otros cambios del código.
 5. Los casos de prueba pueden ser utilizados como documentación.
 
-###Observer
+### Observer
 El patrón Observer se puede utilizar cuando un objeto (sujeto) necesita notificar a clientes (observadores) de modificaciones. El sujeto mantiene una lista de dependientes, a los que les notifica automáticamete al ocurrir un cambio en su estado. 
 
 La principal ventaja al utilizar este patrón es evitar el acoplamiento entre las clases sujeto y observadores, y la comprobación continua por parte de los observadores del cambio de estado del sujeto. Este patrón de diseño es la base del modelo MVC.
