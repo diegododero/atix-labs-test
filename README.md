@@ -4,14 +4,17 @@
 	1. No es extensible para otros tipos de cuenta
 	2. No valida que el valor de tipo al crearse el objeto sea CAJA_AHORRO o CUENTA_CORRIENTE. Como consecuencia, no se ejecuta la validación de saldo suficiente por lo que la cuenta puede quedar con saldo negativo.
 - Agregaría un getter para el atributo saldo y opcionalmente para el atributo titular y nroCuenta.
-
+- Diagrama de clases con los cambios
 ![Diagrama de clases](images/CuentaBancaria.png)
 
 ## Ejercicio 1.b
 Suposiciones
+1. El cálculo de los distintos parámetros (promedio, máximo, mínimo) se realiza en base a los datos de 4 sensores. Los cuatro valores
+que se tomen deben ser de distintos sensores.
+2. La restricción de orden de ingreso es a nivel de sensor.
 
 ## Ejercicio 2
-###Strategy
+### Strategy
 El patrón Strategy se utiliza cuando es necesario modificar un algoritmo en tiempo de ejecución. Se define una familia de algoritmos que son encapsuladas en distintas clases.  El cliente puede cambiar las estrategias.
 Las instancias necesarias de cada clase de estrategia dependen del problema. Una estrategia puede tener estado
 
@@ -37,9 +40,17 @@ WHERE nombre LIKE 'Jorg%'
 ``` 
 
 ```sql
-SELECT EXTRACT(MONTH FROM fechaNac)
+SELECT EXTRACT(MONTH FROM fechaNac) AS Mes
 FROM Usuario u 
 	INNER JOIN Persona p ON u.id = p.idUsuario
 GROUP BY EXTRACT(MONTH FROM fechaNac)
+HAVING COUNT (*) > 10
+``` 
+
+```sql
+SELECT MONTH(fechaNac) AS Mes
+FROM Usuario u 
+	INNER JOIN Persona p ON u.id = p.idUsuario
+GROUP BY MONTH(fechaNac)
 HAVING COUNT (*) > 10
 ``` 
