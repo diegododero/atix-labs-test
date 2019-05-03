@@ -29,7 +29,7 @@ Podemos mencionar como principales ventajas de las pruebas unitarias las siguien
 ### Observer
 El patrón Observer se puede utilizar cuando un objeto (sujeto) necesita notificar a clientes (observadores) de modificaciones. El sujeto mantiene una lista de dependientes, a los que les notifica automáticamete al ocurrir un cambio en su estado. 
 
-La principal ventaja al utilizar este patrón es evitar el acoplamiento entre las clases sujeto y observadores, y la comprobación continua por parte de los observadores del cambio de estado del sujeto. Este patrón de diseño es la base del modelo MVC.
+La principal ventaja al utilizar este patrón es evitar el acoplamiento entre las clases sujeto y observadores y la comprobación continua por parte de los observadores del cambio de estado del sujeto. Este patrón de diseño es la base del modelo MVC.
 
 ## Ejercicio 3
 ```sql
