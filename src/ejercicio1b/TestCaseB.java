@@ -3,7 +3,7 @@ package ejercicio1b;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Test {
+public class TestCaseB {
 
 	public static void main(String[] args) {
 		int threadsNumber = 4;
