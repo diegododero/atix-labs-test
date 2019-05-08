@@ -1,11 +1,16 @@
 package ejercicio1b.http;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
+
+import ejercicio1b.http.Message;
 
 public class Monitor implements Runnable {
 	private BlockingQueue<Message>[] queues;
 	private final int s;
 	private final int m;
+	private List<Message> messages = new ArrayList<>();
 	
 	public Monitor(BlockingQueue<Message>[] queues, int s, int m) {
 		this.queues = queues;
@@ -24,6 +29,7 @@ public class Monitor implements Runnable {
 			try {
 				for (int i = 0; i < values.length; i++) {
 					values[i] = queues[i].take();
+					messages.add(values[i]);
 					int value = values[i].getValue();
 					System.out.println(String.format("Value %d read from sensor %d at %d", value, values[i].getThread(), values[i].getTimestamp()));
 					if (value > max) {

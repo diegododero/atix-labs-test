@@ -13,6 +13,13 @@ import com.sun.net.httpserver.HttpHandler;
 
 import ejercicio1b.http.Message;
 
+/**
+ * Clase que implementa el handler de los requests POST
+ * enviados por los sensores
+ * 
+ * @author diego
+ *
+ */
 public class PostHandler implements HttpHandler {
 	private BlockingQueue<Message>[] queues;
 
@@ -28,11 +35,14 @@ public class PostHandler implements HttpHandler {
 			while ((responseLine = br.readLine()) != null) {
 				response.append(responseLine.trim());
 			}
+			
 			String jsonString = response.toString();
 			JSONObject jsonObject = new JSONObject(jsonString);
 			int thread = jsonObject.getInt("id");
 			int value = jsonObject.getInt("value");
 			long timestamp = jsonObject.getLong("timestamp");
+			
+			//Encola el mensaje que será consumido por el monitor
 			Message message = new Message(thread, value, timestamp);
 			queues[thread].put(message);
 		} catch (InterruptedException e) {

@@ -26,6 +26,11 @@ public class Test {
 		Thread monitorThread = new Thread(monitor);
 		monitorThread.start();
 		
+		/*
+		 * Crea un servidor http que escucha peticiones en el puerto 8082
+		 * El endpoint es api/messages
+		 * 
+		 */
 		HttpServer server;
 		try {
 			server = HttpServer.create(new InetSocketAddress(8082), 0);
